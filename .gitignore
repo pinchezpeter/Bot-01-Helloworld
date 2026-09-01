@@ -1,0 +1,17 @@
+target/
+data/
+
+*.class
+*.log
+
+.idea/
+.vscode/
+*.iml
+
+.env
+application-local.properties
+
+.DS_Store
+Thumbs.db
+application.properties.backup
+src/main/resources/application.properties.backup

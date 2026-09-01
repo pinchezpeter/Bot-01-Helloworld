@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Enquiry Details</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        .header {
+            background: #075e54;
+            color: white;
+            padding: 25px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 800px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .row {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .value {
+            font-size: 17px;
+        }
+
+        .request {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 8px;
+            white-space: pre-wrap;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 18px;
+            background: #075e54;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .back:hover {
+            opacity: 0.9;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+    <h1>📋 Enquiry Details</h1>
+
+    <p>Customer enquiry information</p>
+
+</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="row">
+
+            <div class="label">
+                ID
+            </div>
+
+            <div class="value"
+                 th:text="${enquiry.id}">
+                1
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="label">
+                Customer Name
+            </div>
+
+            <div class="value"
+                 th:text="${enquiry.customerName}">
+                Peter
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="label">
+                Phone Number
+            </div>
+
+            <div class="value"
+                 th:text="${enquiry.customerPhone}">
+                0795...
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="label">
+                Service
+            </div>
+
+            <div class="value"
+                 th:text="${enquiry.service}">
+                Website Development
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="label">
+                Status
+            </div>
+
+            <div class="value"
+                 th:text="${enquiry.status}">
+                NEW
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="label">
+                Date & Time
+            </div>
+
+            <div class="value"
+                 th:text="${enquiry.createdAt}">
+                2026-08-30
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="label">
+                Customer Request
+            </div>
+
+            <div class="request"
+                 th:text="${enquiry.request}">
+                I need a website for my school.
+            </div>
+
+        </div>
+
+<a href="/admin"
+   class="back">
+    ← Back to Dashboard
+</a>
+
+<a th:href="'https://wa.me/' + ${enquiry.customerPhone}"
+   target="_blank"
+   style="
+       display:inline-block;
+       margin-top:25px;
+       margin-left:10px;
+       padding:12px 18px;
+       background:#25D366;
+       color:white;
+       text-decoration:none;
+       border-radius:7px;
+   ">
+    📱 Contact Customer
+</a>
+    </div>
+
+</div>
+
+</body>
+
+</html>
